@@ -1,33 +1,161 @@
-/* Reset básico */
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --main-bg-color: #f9f9f9;
+  --primary-color: #ac6291;
+  --secondary-color: #94a2d2;
+  --text-color: #1b1b1b;
+  --font-family-heading: "Montserrat", sans-serif;
+  --font-family-text: "Hind", sans-serif;
+
+  --font-size-title-large: 2.5rem;
+  --font-size-title-medium: 2rem;
+  --font-size-title-small: 1.75rem;
+
+  --font-size-p: 1rem;
+  --font-size-small: 0.875rem;
+  --font-size-large: 1.125rem;
+}
+
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  background-color: #AC6291; /* Fondo blanco */
+  padding: 0;
+  background-color: var(--text-color);
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ocupa toda la pantalla */
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
 }
 
-.container {
-  max-width: 90%;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-color);
+  font-family: var(--font-family-heading);
 }
 
-h1 {
-  color: #ffffff;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+p {
+  color: var(--text-color);
+  font-family: var(--font-family-text);
 }
 
-img {
-  max-width: 250px;
+ul {
+  padding: 0;
+  text-align: start;
+}
+
+li {
+  list-style: none;
+  font-family: var(--font-family-text);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.container-main-card {
+  background-color: var(--main-bg-color);
+  width: 25rem;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-second-img {
+  background-color: var(--primary-color);
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 20%;
+  position: relative;
+}
+
+.profile-img {
+  width: 200px;
+  position: absolute;
+  bottom: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container-three-data {
+  background-image: url("background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.container-three-data-title {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container-three-data-title h1 {
+  font-size: var(--font-size-title-medium);
+  color: var(--text-color);
+}
+
+.container-three-data-title p {
+  font-size: var(--font-size-large);
+  color: var(--text-color);
+}
+
+.container-three-data-button {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.btn-whatsapp {
+  background-color: var(--main-bg-color);
+  width: 75%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* espacio entre ícono y texto */
+  padding: 10px 20px;
+  border: 1px solid var(--text-color);
+  border-radius: 15px; /* bordes redondeados */
+  text-decoration: none;
+  color: var(--text-color);
+  font-family: var(--font-family-text);
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-whatsapp:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.btn-whatsapp img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  .container-main-card {
+    width: 100%;
+    height: 100vh;
+  }
 }
